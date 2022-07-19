@@ -12,11 +12,17 @@ function App() {
 
   const [data, setData] = useState([])
 
+  const [numPag, setNumPag] = useState(1)
+
+
   useEffect(() => {
-    axios.get("https://swapi.dev/api/starships/").then(res => {
-      setData(res.data.results)
+    axios.get(`https://swapi.dev/api/starships/?page=${numPag}`).then(res => {
+      setData(preValor => {
+        return [...preValor, ...res.data.results]
+      })
     })
-  }, [])
+  }, [numPag])
+
 
 
   return (
@@ -25,7 +31,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/starships" element={<Starships data={data} />} />
+          <Route path="/starships" element={<Starships data={data} setNumPag={setNumPag} numPag={numPag} />} />
           <Route path="/starships/:id" element={<Shipdetails />} />
         </Routes>
       </BrowserRouter>
