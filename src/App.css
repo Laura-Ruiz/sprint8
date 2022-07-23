@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 0;
+  padding: 0;
+  /* font-family: "Rajdhani", sans-serif; */
+}
+
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Fuente-link;
+  src: url("./fonts/fuente1.woff") format("opentype");
+}
+@font-face {
+  font-family: Fuente2;
+  src: url("./fonts/fuente2.woff") format("opentype");
+}
+@font-face {
+  font-family: Fuente-name;
+  src: url("./fonts/fuente3.woff") format("opentype");
+}
+@font-face {
+  font-family: fuente-texto;
+  src: url("./fonts/fuente4.woff") format("opentype");
+}
+@font-face {
+  font-family: Fuente5;
+  src: url("./fonts/fuente5.woff") format("opentype");
+}

@@ -1,31 +1,27 @@
-import React, { useState, useEffect, useCallback, useRef } from "react"
-import "../styles/style.css"
-
-import axios from 'axios';
+import "../styles/starships.css"
 
 export default function Starships(props) {
-    console.log("props", props)
+
 
     function handleClick() {
         props.setNumPag(preValue => preValue + 1)
-
     }
-    console.log(props.data)
+
     return (
-        <>
-            {props.data.map((datum, index) => {
-                const last = datum.url.split('/');
+        <div className="container-ships">
+            {props.starShips.map((starShip, index) => {
+                const last = starShip.url.split('/');
                 const id = last[last.length - 2];
 
-                return <div className="ships" key={`datum-${index}`}>
-                    <a className="a_ship" href={`starships/${id}`}><p className="name">{datum.name.toUpperCase()}</p><p>{datum.model}</p></a>
+                return <div className="ships" key={`starShip-${index}`}>
+                    <a className="a_ship" href={`starships/${id}`}><p className="name-ship">{starShip.name.toUpperCase()}</p><p>{starShip.model}</p></a>
                 </div>
 
 
             }
             )}
-            <button onClick={handleClick}>View more</button>
-
-        </>
+            {props.loading === false && <div id="container-btn"><button onClick={handleClick}>View more</button></div>}
+            {/* {props.loading && <p>Loading...</p>} */}
+        </div>
     )
 }

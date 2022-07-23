@@ -1,0 +1,44 @@
+.ships {
+  margin: 2rem 7rem 2rem 7rem;
+  background-color: rgba(64, 60, 60, 0.526);
+  padding: 3px;
+  height: 5rem;
+  display: flex;
+  cursor: pointer;
+}
+.ships:hover {
+  /* box-shadow: 0 0 20px red; */
+  box-shadow: 0px 0px 20px 10px rgba(255, 0, 0, 0.435);
+}
+.a_ship {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.a_ship > p {
+  padding-left: 1rem;
+}
+
+.name-ship:hover {
+  color: white;
+}
+
+#container-btn {
+  display: flex;
+  justify-content: center;
+}
+#container-btn > button {
+  padding: 10px;
+  width: 8rem;
+  margin-bottom: 3rem;
+  background-color: transparent;
+  color: grey;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+/* #container-btn > button:hover {
+  background-color: rgba(64, 60, 60, 0.526);
+  color: black;
+} */

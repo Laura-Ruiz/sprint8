@@ -1,0 +1,66 @@
+.container-register {
+  height: 46rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  background: rgba(64, 60, 60, 0.526);
+  align-items: center;
+  height: 38rem;
+  justify-content: center;
+}
+
+.form-register > div > input {
+  height: 1rem;
+  height: 2rem;
+  width: 24rem;
+  padding: 1rem;
+  margin: 7px;
+  border-radius: 5px;
+  border: none;
+}
+
+.form-register > img {
+  width: 55%;
+  margin: 1rem;
+}
+
+.form-register > button {
+  height: 2rem;
+  width: 24rem;
+  font-family: Fuente-texto;
+  font-size: medium;
+  background-color: gray;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.form-register > p {
+  padding: 1rem;
+  font-family: Fuente-link;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.error {
+  color: rgb(230, 82, 82);
+  width: 25rem;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.success {
+  font-weight: bold;
+  color: rgb(135, 227, 135);
+  width: 25rem;
+  padding-left: 1rem;
+}
