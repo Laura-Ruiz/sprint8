@@ -20,6 +20,9 @@
   padding-left: 1rem;
 }
 
+.name-ship {
+  text-transform: uppercase;
+}
 .name-ship:hover {
   color: white;
 }

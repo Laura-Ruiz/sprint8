@@ -14,7 +14,7 @@ export default function Starships(props) {
                 const id = last[last.length - 2];
 
                 return <div className="ships" key={`starShip-${index}`}>
-                    <a className="a_ship" href={`starships/${id}`}><p className="name-ship">{starShip.name.toUpperCase()}</p><p>{starShip.model}</p></a>
+                    <a className="a_ship" href={`starships/${id}`}><p className="name-ship">{starShip.name}</p><p>{starShip.model}</p></a>
                 </div>
 
 
