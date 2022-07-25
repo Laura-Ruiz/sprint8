@@ -7,50 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
 
-
-  const [dataLogin, setDataLogin] = useState({
-    emailLogin: "",
-    passwordLogin: ""
-  })
-
-
-  const [userLogin, setUserLogin] = useState(
-    () => {
-      const initial = [];
-
-
-      try {
-        const data = localStorage.getItem("userLogin");
-        return data ? JSON.parse(data) : initial
-      } catch (e) {
-        return initial
-      }
-    })
-
-  useEffect(() => {
-    localStorage.setItem("userLogin", JSON.stringify(userLogin));
-  }, [userLogin])
-
-
-  function addNewUserLogin() {
-    const newUSer = {
-      emailLogin: dataLogin.emailLogin,
-      passwordLogin: dataLogin.passwordLogin
-    }
-    setUserLogin(newUSer)
-  }
-
-  function handleChangeLogin(event) {
-    const { name, value } = event.target
-    setDataLogin(preValue => {
-      return {
-        ...preValue,
-        [name]: value
-      }
-    })
-  }
-
-
   const [clientFilter, setClientFilter] = useState([])
   const [isAuthenticated, setisAutheticated] = useState(null)
   const [errorLogin, setErrorLogin] = useState({})
@@ -58,8 +14,8 @@ export default function Login(props) {
   function handleClickLogin(event) {
     event.preventDefault()
 
-    addNewUserLogin()
-    setErrorLogin(ValidateLogin(dataLogin))
+    props.addNewUserLogin()
+    setErrorLogin(ValidateLogin(props.dataLogin))
 
     filterClientList()
   }
@@ -69,11 +25,11 @@ export default function Login(props) {
   function filterClientList(event) {
 
     const clienteFiltrado = [...props.clientList].filter(client => {
-      return client.email.includes(dataLogin.emailLogin)
+      return client.email.includes(props.dataLogin.emailLogin)
     })
 
 
-    if (clienteFiltrado[0].password === dataLogin.passwordLogin) {
+    if (clienteFiltrado[0].password === props.dataLogin.passwordLogin) {
       setClientFilter([...clienteFiltrado])
       setisAutheticated(true)
       setTimeout(() => login(), 3000)
@@ -85,16 +41,15 @@ export default function Login(props) {
 
   function login() {
     setisAutheticated(true)
-    props.setisLoggedIn(true)
-    navigate('/Starships')
+    // props.setisLoggedIn(true)
+    navigate('/')
   }
 
-  function logout() {
-    setisAutheticated(false)
-    props.setisLoggedIn(false)
-  }
-
-
+  // function logout() {
+  //   setisAutheticated(false)
+  //   props.setUserLogin(false)
+  //   // props.setisLoggedIn(false)
+  // }
 
   return (
     <div className="container-register">
@@ -105,8 +60,8 @@ export default function Login(props) {
           <input
             type="text"
             name="emailLogin"
-            value={dataLogin.emailLogin}
-            onChange={(e) => handleChangeLogin(e)}
+            value={props.dataLogin.emailLogin}
+            onChange={(e) => props.handleChangeLogin(e)}
             placeholder="Email Address"
           />
           {errorLogin.emailLogin && <p className="error">{errorLogin.emailLogin}</p>}
@@ -116,15 +71,15 @@ export default function Login(props) {
           <input
             type="password"
             name="passwordLogin"
-            value={dataLogin.passwordLogin}
-            onChange={(e) => handleChangeLogin(e)}
+            value={props.dataLogin.passwordLogin}
+            onChange={(e) => props.handleChangeLogin(e)}
             placeholder="Password"
           />
           {errorLogin.passwordLogin && <p className="error">{errorLogin.passwordLogin}</p>}
         </div>
 
         <button type="submit" onClick={(e) => handleClickLogin(e)}>Login</button>
-        <button onClick={logout}>Logout</button>
+        {/* <button onClick={logout}>Logout</button> */}
 
         {isAuthenticated === true ? (
           <p className="success">You are now logged in </p>

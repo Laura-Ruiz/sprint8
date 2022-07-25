@@ -1,4 +1,3 @@
-
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -9,8 +8,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Shipdetails from './components/Shipdetails';
 import Protected from "./components/Protected";
-
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -31,11 +28,9 @@ function App() {
 
   }, [numPag])
 
-
   const [clientList, setClientList] = useState(
     () => {
       const initial = [];
-
 
       try {
         const data = localStorage.getItem("clientList");
@@ -49,31 +44,68 @@ function App() {
     localStorage.setItem("clientList", JSON.stringify(clientList));
   }, [clientList])
 
-  const [isLoggedIn, setisLoggedIn] = useState(null);
+
+  const [dataLogin, setDataLogin] = useState({
+    emailLogin: "",
+    passwordLogin: ""
+  })
+
+  function handleChangeLogin(event) {
+    const { name, value } = event.target
+    setDataLogin(preValue => {
+      return {
+        ...preValue,
+        [name]: value
+      }
+    })
+  }
+
+  const [userLogin, setUserLogin] = useState(
+    () => {
+      const initial = false;
+      try {
+        const data = localStorage.getItem("userLogin");
+        return data ? JSON.parse(data) : initial
+      } catch (e) {
+        return initial
+      }
+    })
+
+  useEffect(() => {
+    localStorage.setItem("userLogin", JSON.stringify(userLogin));
+  }, [userLogin])
+
+
+  function addNewUserLogin() {
+    const newUSer = {
+      emailLogin: dataLogin.emailLogin,
+      passwordLogin: dataLogin.passwordLogin
+    }
+    setUserLogin(newUSer)
+  }
+
+  const isLoggedIn = (userLogin) ? true : false
+
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        <Navbar setUserLogin={setUserLogin} userLogin={userLogin} />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/starships" element={<Starships starShips={starShips} setNumPag={setNumPag} numPag={numPag} loading={loading} />} /> */}
           <Route path='/starships'
             element={
               <Protected isLoggedIn={isLoggedIn}>
                 <Starships starShips={starShips} setNumPag={setNumPag} numPag={numPag} loading={loading} />
               </Protected>
             } />
-
           <Route path='/starships/:id'
             element={
               <Protected isLoggedIn={isLoggedIn}>
                 <Shipdetails />
               </Protected>
             } />
-          {/* <Route path="/starships/:id" element={<Shipdetails />} /> */}
-
-          <Route path="/login" element={<Login clientList={clientList} setisLoggedIn={setisLoggedIn} />} />
+          <Route path="/login" element={<Login clientList={clientList} dataLogin={dataLogin} addNewUserLogin={addNewUserLogin} handleChangeLogin={handleChangeLogin} setUserLogin={setUserLogin} />} />
           <Route path="/register" element={<Signup setClientList={setClientList} clientList={clientList} />} />
         </Routes>
       </BrowserRouter>

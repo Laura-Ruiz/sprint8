@@ -8,6 +8,8 @@
 
 #logo {
   width: 15rem;
+  position: relative;
+  margin-left: 2rem;
 }
 
 a {
@@ -46,16 +48,27 @@ a {
   border-right: 1px solid grey;
 }
 
-#container-login {
+#container-login,
+#logout {
   display: flex;
   gap: 10px;
   align-self: center;
   font-family: Fuente-link;
   font-size: large;
   font-weight: bold;
+  align-items: center;
+}
+#container-login {
+  width: 12rem;
+}
+#logout {
+  background: none;
+  color: grey;
+  cursor: pointer;
 }
 
-#container-login > a:hover {
+#container-login > a:hover,
+#logout:hover {
   color: white;
 }
 #container-login > p {

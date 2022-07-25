@@ -3,7 +3,11 @@ import { NavLink } from "react-router-dom";
 import logo from "../img/logoStarwars.jpg";
 import "../styles/navbar.css";
 
-export default function Navbar() {
+export default function Navbar(props) {
+
+    function logout() {
+        props.setUserLogin(false)
+    }
     return (
         <div id="container-navbar">
             <div id="container-header">
@@ -81,9 +85,9 @@ export default function Navbar() {
 
                 <img id="logo" src={logo}></img>
                 <div id="container-login">
-                    <NavLink to="/login">LOG IN</NavLink>
+                    {props.userLogin ? <p>WELCOME</p> : <NavLink to="/login">LOG IN</NavLink>}
                     <p>//</p>
-                    <NavLink to="/register">SIGN UP</NavLink>
+                    {props.userLogin ? <button id="logout" onClick={logout}>LOG OUT</button> : <NavLink to="/register">SIGN UP</NavLink>}
                 </div>
             </div>
             <div id="navbar-links">
