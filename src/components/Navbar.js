@@ -5,9 +5,12 @@ import "../styles/navbar.css";
 
 export default function Navbar(props) {
 
+    console.log("navbar", props)
+
     function logout() {
         props.setUserLogin(false)
     }
+
     return (
         <div id="container-navbar">
             <div id="container-header">

@@ -1,38 +1,62 @@
-/* .container-pilot-films {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  min-height:100px
-} */
-
-/* .pilot-film {
-  padding: 1rem;
-  margin: 0.5rem;
-  background-color: rgba(64, 60, 60, 0.526);
-  border-radius: 5px;
-} */
-.title-pilots-films {
-  font-family: Fuente-name;
-  font-weight: 100;
-  text-align: center;
-  margin-top: 2rem;
-}
 .container-pilot-films {
   display: flex;
   flex-wrap: wrap;
   width: 45rem;
 }
 
-.pilot-film {
-  margin: 1rem;
-  padding: 1rem;
-  background-color: rgba(64, 60, 60, 0.526);
-  border-radius: 5px;
-  height: auto;
-  width: 13rem;
-  transform-style: preserve-3d;
-  transition: all 0.5s linear;
+.title-pilots-films {
+  font-family: Fuente-name;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 2rem;
+  color: yellow;
 }
-.imgFilms {
-  height: 12rem;
+
+.pilot-film {
+  position: relative;
+  width: 20%;
   margin: 1rem;
+}
+
+.imgFilms-Pilots {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #2f2f2f;
+  cursor: pointer;
+}
+
+.pilot-film:hover .overlay {
+  opacity: 0.9;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: bold;
+  color: yellow;
+}
+.text {
+  font-family: Fuente-name;
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 7rem;
 }

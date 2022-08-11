@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Signup from "./Signup";
-import "../styles/signup.css"
+import React, { useState } from "react";
+import "../styles/register.css"
 import logoRegister from "../img/descarga.png"
 import ValidateLogin from "./ValidationLogin";
 import { useNavigate } from "react-router-dom";
@@ -41,20 +40,13 @@ export default function Login(props) {
 
   function login() {
     setisAutheticated(true)
-    // props.setisLoggedIn(true)
     navigate('/')
   }
-
-  // function logout() {
-  //   setisAutheticated(false)
-  //   props.setUserLogin(false)
-  //   // props.setisLoggedIn(false)
-  // }
 
   return (
     <div className="container-register">
       <form className="form-register">
-        <img src={logoRegister}></img>
+        <img src={logoRegister} alt="logo register"></img>
 
         <div>
           <input
@@ -79,7 +71,6 @@ export default function Login(props) {
         </div>
 
         <button type="submit" onClick={(e) => handleClickLogin(e)}>Login</button>
-        {/* <button onClick={logout}>Logout</button> */}
 
         {isAuthenticated === true ? (
           <p className="success">You are now logged in </p>

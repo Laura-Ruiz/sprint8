@@ -42,12 +42,17 @@ export default function Starships(props) {
                             const last = film.url.split('/');
                             const id = last[last.length - 2];
                             return <div className="pilot-film" key={`film-${index}`}>
-                                <img className="imgFilms" src={`https://starwars-visualguide.com/assets/img/films/${id}.jpg`}></img>
-                                <p>Title: {film.title}</p>
-                                <p>Episode: {film.episode_id}</p>
-                                <p>Director: {film.director}</p>
-                                <p>Release data: {film.release_date}</p>
-                                <p>Producer: {film.producer}</p>
+                                <img className="imgFilms-Pilots" src={`https://starwars-visualguide.com/assets/img/films/${id}.jpg`}></img>
+                                <div className="overlay">
+                                    <div className="text">
+                                        <p className="name">{film.title}</p>
+                                        <br />
+                                        <p>Episode: {film.episode_id}</p>
+                                        <p>Director: {film.director}</p>
+                                        <p>Release data: {film.release_date}</p>
+                                        <p>Producer: {film.producer}</p>
+                                    </div>
+                                </div>
                             </div>
                         })}
                     </div>

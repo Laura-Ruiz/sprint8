@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios';
 import "../styles/pilots.css"
 export default function Pilots(props) {
-    console.log("props Pilots", props)
+
     const shipDetailsPilots = props.shipDetails.pilots
 
     let idUrl = []
@@ -16,7 +16,6 @@ export default function Pilots(props) {
             return id
         })
     }
-    console.log("id", idUrl)
 
     const [pilots, setPilots] = useState([])
 
@@ -40,15 +39,19 @@ export default function Pilots(props) {
                         const last = pilot.url.split('/');
                         const id = last[last.length - 2];
                         return <div className="pilot-film" key={`pilot-${index}`}>
-                            <img className="imgFilms" src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}></img>
-                            <p>Name: {pilot.name}</p>
-                            <p>Birth Year: {pilot.birth_year}</p>
-                            <p>Gender: {pilot.gender}</p>
-                            <p>Height: {pilot.height}</p>
-                            <p>Mass: {pilot.mass}</p>
-                            <p>Hair color: {pilot.hair_color}</p>
-                            <p>Skin color: {pilot.skin_color}</p>
-                            <p>Eye color: {pilot.eye_color}</p>
+                            <div id="container-img">
+                                <img className="imgFilms-Pilots" alt="films images" src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}></img>
+                            </div>
+                            <div className="overlay">
+                                <div className="text">
+                                    <p className="name">{pilot.name}</p>
+                                    <br />
+                                    <p>Birth Year: {pilot.birth_year}</p>
+                                    <p>Gender: {pilot.gender}</p>
+                                    <p>Height: {pilot.height}</p>
+                                    <p>Mass: {pilot.mass}</p>
+                                </div>
+                            </div>
                         </div>
                     })}
                 </div>

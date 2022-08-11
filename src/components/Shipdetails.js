@@ -18,19 +18,17 @@ export default function Shipdetails() {
         })
     }, [])
 
-    console.log("shipdetails", shipDetails)
-
     return (
         <div className="container-shipDetails">
-            {/* <img onerror="this.src='https://starwars-visualguide.com/assets/img/starships/5.jpg';" src={`https://starwars-visualguide.com/assets/img/starships/${params.id}.jpg`} /> */}
-            <img id="imgShip"
+            
+            <img id="imgShip" alt="ships"
                 src={`https://starwars-visualguide.com/assets/img/starships/${params.id}.jpg`}
                 onError={({ currentTarget }) => {
                     currentTarget.onerror = null; // prevents looping
                     currentTarget.src = "https://starwars-visualguide.com/assets/img/big-placeholder.jpg";
                 }}
             />
-            {/* <img id="imgShip" src={`https://starwars-visualguide.com/assets/img/starships/${params.id}.jpg`} alt="star ships"></img> */}
+            
             <div><h1 className="shipDetails-name">{shipDetails.name}</h1></div>
             <div id="infoShips">
                 <p>Model: {shipDetails.model}</p>

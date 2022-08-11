@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Validate from "./ValidationRegister"
-import { Link } from "react-router-dom"
-import "../styles/signup.css"
+import { NavLink } from "react-router-dom"
+import "../styles/register.css"
 import logoRegister from "../img/descarga.png"
 export default function Signup(props) {
-
 
     const [isRegister, setIsRegister] = useState(false)
 
@@ -54,7 +53,7 @@ export default function Signup(props) {
         <div className="container-register">
 
             <form className="form-register">
-                <img src={logoRegister}></img>
+                <img src={logoRegister} alt="logo starwars"></img>
                 <div>
                     <input
                         type="text"
@@ -73,7 +72,7 @@ export default function Signup(props) {
                         onChange={handleChangeRegister}
                         placeholder="Last Name"
                     />
-                    {errors.lastName && <p className="error">{errors.lastName}</p>}
+                    {errors.lastName && <p id="errorName" className="error">{errors.lastName}</p>}
                 </div>
                 <div>
                     <input
@@ -95,8 +94,8 @@ export default function Signup(props) {
                     />
                     {errors.password && <p className="error">{errors.password}</p>}
                 </div>
-                <button type="submit" onClick={(e) => handleClick(e)}>Create Account</button>
-                <p>Already have an account?<Link to="/login" >Sign In</Link></p>
+                <button id="button" type="submit" onClick={(e) => handleClick(e)}>Create Account</button>
+                <p>Already have an account?<NavLink to="/login" >Sign In</NavLink></p>
                 {isRegister ? (
                     <p className="success"> Registration Successful! </p>
                 ) : (

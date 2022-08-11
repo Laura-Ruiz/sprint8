@@ -5,6 +5,7 @@ export default function Home() {
     return (
         <div id="container-home">
             <img
+                alt="gif starwars"
                 id="imgHome"
                 src="https://thumbs.gfycat.com/UnfinishedWaryFurseal-size_restricted.gif"
             ></img>
@@ -26,7 +27,7 @@ export default function Home() {
                 holographic projections, and HoloNet (internet counterpart).
                 <br></br>
                 <br></br>
-                The universe of Star Wars is generally similar to ours but its laws of
+                {/* The universe of Star Wars is generally similar to ours but its laws of
                 physics are less strict allowing for more imaginative stories. One
                 result of that is a mystical power known as the Force which is described
                 in the original film as "an energy field created by all living things
@@ -54,7 +55,7 @@ export default function Home() {
                 during which most Star Wars material takes place. In the outer reaches
                 of the galaxy, crime syndicates such as the Hutt cartel are dominant.
                 Bounty hunters are often employed by both gangsters and governments.
-                Illicit activities include smuggling and slavery.
+                Illicit activities include smuggling and slavery. */}
 
             </p>
             <footer id="footer-home">
@@ -134,7 +135,7 @@ export default function Home() {
                 </ul>
 
             </footer>
-            {/* <div>TM & © Lucasfilm Ltd. All Rights Reserved</div> */}
+
         </div>
     );
 }
