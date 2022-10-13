@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/starwars-sprint8/static/css/main.11ba0d4f.css",
-    "main.js": "/starwars-sprint8/static/js/main.a0f37903.js",
-    "static/js/787.0bebcc27.chunk.js": "/starwars-sprint8/static/js/787.0bebcc27.chunk.js",
-    "static/media/descarga.png": "/starwars-sprint8/static/media/descarga.c38fbfa2470fd5615458.png",
-    "static/media/logoStarwars.jpg": "/starwars-sprint8/static/media/logoStarwars.2b5a7673250e185ab7e9.jpg",
-    "static/media/fuente5.woff": "/starwars-sprint8/static/media/fuente5.62913ecce4ed7e87d6de.woff",
-    "static/media/fuente1.woff": "/starwars-sprint8/static/media/fuente1.688e849e5d240d25228d.woff",
-    "static/media/fuente2.woff": "/starwars-sprint8/static/media/fuente2.688e849e5d240d25228d.woff",
-    "static/media/fuente4.woff": "/starwars-sprint8/static/media/fuente4.066c988a8b22f6b29fe3.woff",
-    "static/media/fuente3.woff": "/starwars-sprint8/static/media/fuente3.ebf7a0986d2b5f8d3982.woff",
-    "index.html": "/starwars-sprint8/index.html",
-    "main.11ba0d4f.css.map": "/starwars-sprint8/static/css/main.11ba0d4f.css.map",
-    "main.a0f37903.js.map": "/starwars-sprint8/static/js/main.a0f37903.js.map",
-    "787.0bebcc27.chunk.js.map": "/starwars-sprint8/static/js/787.0bebcc27.chunk.js.map"
+    "main.css": "/sprint8/static/css/main.0b3e8f1e.css",
+    "main.js": "/sprint8/static/js/main.f121cc7b.js",
+    "static/js/787.0bebcc27.chunk.js": "/sprint8/static/js/787.0bebcc27.chunk.js",
+    "static/media/descarga.png": "/sprint8/static/media/descarga.c38fbfa2470fd5615458.png",
+    "static/media/logoStarwars.jpg": "/sprint8/static/media/logoStarwars.2b5a7673250e185ab7e9.jpg",
+    "static/media/fuente5.woff": "/sprint8/static/media/fuente5.62913ecce4ed7e87d6de.woff",
+    "static/media/fuente1.woff": "/sprint8/static/media/fuente1.688e849e5d240d25228d.woff",
+    "static/media/fuente2.woff": "/sprint8/static/media/fuente2.688e849e5d240d25228d.woff",
+    "static/media/fuente4.woff": "/sprint8/static/media/fuente4.066c988a8b22f6b29fe3.woff",
+    "static/media/fuente3.woff": "/sprint8/static/media/fuente3.ebf7a0986d2b5f8d3982.woff",
+    "index.html": "/sprint8/index.html",
+    "main.0b3e8f1e.css.map": "/sprint8/static/css/main.0b3e8f1e.css.map",
+    "main.f121cc7b.js.map": "/sprint8/static/js/main.f121cc7b.js.map",
+    "787.0bebcc27.chunk.js.map": "/sprint8/static/js/787.0bebcc27.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11ba0d4f.css",
-    "static/js/main.a0f37903.js"
+    "static/css/main.0b3e8f1e.css",
+    "static/js/main.f121cc7b.js"
   ]
 }
