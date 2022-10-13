@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/starwars-sprint8/static/css/main.11ba0d4f.css",
-    "main.js": "/starwars-sprint8/static/js/main.a0f37903.js",
+    "main.js": "/starwars-sprint8/static/js/main.def99336.js",
     "static/js/787.0bebcc27.chunk.js": "/starwars-sprint8/static/js/787.0bebcc27.chunk.js",
     "static/media/descarga.png": "/starwars-sprint8/static/media/descarga.c38fbfa2470fd5615458.png",
     "static/media/logoStarwars.jpg": "/starwars-sprint8/static/media/logoStarwars.2b5a7673250e185ab7e9.jpg",
@@ -12,11 +12,11 @@
     "static/media/fuente3.woff": "/starwars-sprint8/static/media/fuente3.ebf7a0986d2b5f8d3982.woff",
     "index.html": "/starwars-sprint8/index.html",
     "main.11ba0d4f.css.map": "/starwars-sprint8/static/css/main.11ba0d4f.css.map",
-    "main.a0f37903.js.map": "/starwars-sprint8/static/js/main.a0f37903.js.map",
+    "main.def99336.js.map": "/starwars-sprint8/static/js/main.def99336.js.map",
     "787.0bebcc27.chunk.js.map": "/starwars-sprint8/static/js/787.0bebcc27.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.11ba0d4f.css",
-    "static/js/main.a0f37903.js"
+    "static/js/main.def99336.js"
   ]
 }
